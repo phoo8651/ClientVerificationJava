@@ -1,0 +1,34 @@
+name: ClientVerification
+main: net.rorum.minecraft.Main
+version: 1.0.0
+api-version: 1.20
+author: Rorum (phoo8651@rorum.net)
+description: This plugin works by linking Twitch and Microsoft accounts to automatically whitelist users.
+libraries:
+  - org.mongodb:mongodb-driver-sync:4.10.2
+
+commands:
+  cv:
+    description: Client Verification Plugin Root Command
+    usage: /cv <on|off|help>
+    permission: cv-admin
+  cv help:
+    description: Client Verification Get Information Command
+    usage: /cv help
+    permission: cv-user
+  cv on:
+    description: Client Verification Activate
+    usage: /cv on
+    permission: cv-admin
+  cv off:
+    description: Client Verification Deactivate
+    usage: /cv off
+    permission: cv-admin
+
+permissions:
+  cv-user:
+    description: Access to basic Client Verification commands
+    default: true
+  cv-admin:
+    description: Access to admin-level Client Verification commands
+    default: op
